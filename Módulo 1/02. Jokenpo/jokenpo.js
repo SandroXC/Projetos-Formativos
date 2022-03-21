@@ -1,87 +1,117 @@
 const prompt = require('prompt-sync')();
+console.log("Jokenpô - Pedra, papel ou tesoura\n");
+while ((q = "S") || (q = "s")) {
+  let rodada = +prompt("Quantas rodadas você deseja jogar? (dê uma resposta numérica):", "");
 
-console.log(
-    'Jornada do Herói:\n  Maria é uma mãe solteira de 21 anos. Ela mora em Cidade Tiradentes e acorda às 04h30 para ir trabalhar no centro de São Paulo. Antes, porém, ela presisa passar na casa de sua mãe para deixar seu filho Pedro, que será levado mais tarde à escolinha. Maria pega um ônibus até a estação Corinthians - Itaquera e, de lá, pega duas linhas do metrô até chegar ao trabalho. Ela tem que ser rápida na volta, pois precisa pegar seu filho na escola à tempo desta fechar, ir para casa dar banho nele, arrumar tudo e fazer a janta. Tudo isto antes - é claro - de ajudar Pedro com as tarefas escolares.\n  Maria deve responder às questões abaixo, dizendo se foi capaz de cumprir sua dura jornada.\n',
-);
+  while (isNaN(rodada)) {
+    rodada = +prompt("Você deve responder com um numeral:", "");
+  }
+  console.log("Vamos jogar:");
 
-let q_ = prompt('Pressione "Enter" para iniciar', ' \n');
+  //VARIÁVEIS CONTADORAS
+  let x02 = 0;
+  let x10 = 0;
+  let x21 = 0;
+  let x20 = 0;
+  let x01 = 0;
+  let x12 = 0;
 
-let q1 = prompt(
-    "Maria, você conseguiu cumprir suas tarefas, a fim de não atrasar a sua saída do trabalho? ('S' para SIM ou 'N' para NÃO)",
-    '',
-);
-
-while (q1 != 'S' && q1 != 's' && q1 != 'N' && q1 != 'n') {
-    q1 = prompt("Você deve responder 'S' (para SIM) ou 'N' (para NÃO)", '');
-}
-
-let q2 = prompt(
-    "Maria, foi possível pegar o metrô na praça da Sé, assim que chegaste lá? ('S' para SIM ou 'N' para NÃO)",
-    '',
-);
-
-while (q2 != 'S' && q2 != 's' && q2 != 'N' && q2 != 'n') {
-    q2 = prompt("Você deve responder 'S' (para SIM) ou 'N' (para NÃO)", '');
-}
-
-let q3 = prompt(
-    "Maria, você conseguiu pegar o primeiro ônibus ao desembarcar em Corinthians-Itaquera? ('S' para SIM ou 'N' para NÃO)",
-    '',
-);
-
-while (q3 != 'S' && q3 != 's' && q3 != 'N' && q3 != 'n') {
-    q3 = prompt("Você deve responder 'S' (para SIM) ou 'N' (para NÃO)", '');
-}
-
-let q4 = prompt(
-    "Você conseguiu pegar Pedro na escola à tempo? ('S' para SIM ou 'N' para NÃO)",
-    '',
-);
-
-while (q4 != 'S' && q4 != 's' && q4 != 'N' && q4 != 'n') {
-    q4 = prompt("Você deve responder 'S' (para SIM) ou 'N' (para NÃO)", '');
-}
-
-let q5 = prompt(
-    "Maria, você conseguiu fazer a janta e ajudar Pedro com as tarefas, antes de ir dormir? ('S' para SIM ou 'N' para NÃO)",
-    '',
-);
-
-while (q5 != 'S' && q5 != 's' && q5 != 'N' && q5 != 'n') {
-    q5 = prompt("Você deve responder 'S' (para SIM) ou 'N' (para NÃO)", '');
-}
-
-var respostas = [q1, q2, q3, q4, q5];
-
-let numDeSim = 0;
-for (let i = 0; i < respostas.length; i++) {
-    if (respostas[i] == 'S' || respostas[i] == 's') {
-        numDeSim++;
+  //INÍCIO DA ITERAÇÃO
+  for (let i = 1; i < rodada + 1; i++) {
+    //ESCOLHA DO JOGADOR
+    let choice = prompt(
+      `Rodada ${i}: Faça a sua escolha digitando "0" para PEDRA, "1" para PAPEL ou "2" para TESOURA:`,
+      ""
+    );
+    while (choice != "0" && choice != "1" && choice != "2") {
+      choice = prompt('Você deve escolher "0" para PEDRA, "1" para PAPEL ou "2" para TESOURA:', "");
     }
-}
+    let theChoice = "";
+    if (choice == "0") {
+      theChoice = "PEDRA";
+    }
+    if (choice == "1") {
+      theChoice = "PAPEL";
+    }
+    if (choice == "2") {
+      theChoice = "TESOURA";
+    }
 
-if (numDeSim == 0) {
-    console.log(
-        'Resultado:\n>> Maria, você está falhando em seu papel de mãe...',
-    );
+    console.log(`Você escolheu ${theChoice}.`);
+
+    //ESCOLHA DO COMPUTADOR
+    var draw = Math.floor(Math.random() * 3);
+    switch (draw) {
+      case 0:
+        console.log("O computador escolheu PEDRA.");
+        break;
+      case 1:
+        console.log("O computador escolheu PAPEL.");
+        break;
+      case 2:
+        console.log("O computador escolheu TESOURA.");
+        break;
+    }
+
+    //ARRAY RODADA + PAR DE RESULTADOS
+    let array = [i, choice, draw];
+
+    //BUSCAR VENCEDOR
+
+    if (array[1] == array[2]) {
+      console.log("Resultado: EMPATE!");
+    }
+    if (array[1] == 0 && array[2] == 2) {
+      x02++;
+      console.log("Resultado: VOCÊ VENCEU!");
+    }
+    if (array[1] == 1 && array[2] == 0) {
+      x10++;
+      console.log("Resultado: VOCÊ VENCEU!");
+    }
+    if (array[1] == 2 && array[2] == 1) {
+      x21++;
+      console.log("Resultado: VOCÊ VENCEU!");
+    }
+    if (array[1] == 2 && array[2] == 0) {
+      x20++;
+      console.log("Resultado: O COMPUTADOR VENCEU!");
+    }
+    if (array[1] == 0 && array[2] == 1) {
+      x01++;
+      console.log("Resultado: O COMPUTADOR VENCEU!");
+    }
+    if (array[1] == 1 && array[2] == 2) {
+      x12++;
+      console.log("Resultado: O COMPUTADOR VENCEU!");
+    }
+    console.log();
+  }
+  //FINAL DA ITERAÇÃO
+
+  let vitoriasUser = x02 + x10 + x21;
+  let vitoriasComp = x20 + x01 + x12;
+
+  console.log(`Você obteve ${vitoriasUser} vitória(s).`);
+  console.log(`O computador obteve ${vitoriasComp} vitória(s).`);
+
+  if (vitoriasUser > vitoriasComp) {
+    console.log("Resultado final: VOCÊ É O CAMPEÃO!!!\n");
+  }
+  if (vitoriasUser < vitoriasComp) {
+    console.log("Resultado final: O COMPUTADOR É O CAMPEÃO!!!\n");
+  }
+  if (vitoriasUser == vitoriasComp) {
+    console.log("Resultado final: VOCÊ EMPATOU COM O COMPUTADOR.\n");
+  }
+
+  let q = prompt('Você gostaria de jogar novamente? ("S" para SIM ou "N" para NÃO)', "");
+  while (q != "S" && q != "s" && q != "N" && q != "n") {
+    q = prompt("Você deve responder 'S' (para SIM) ou 'N' (para NÃO)", "");
+  }
+  if (q == "N" || q == "n") {
+    console.log("Ok, até logo!!!");
+    break;
+  }
 }
-if (numDeSim == 1 || numDeSim == 2) {
-    console.log(
-        'Resultado:\n>> Você deve se esforçar mais. Pedro precisa de você!',
-    );
-}
-if (numDeSim == 3) {
-    console.log(
-        'Resultado:\n>> Maria, as coisas são difíceis, mas não desista de fazer o seu melhor.',
-    );
-}
-if (numDeSim == 4) {
-    console.log(
-        'Resultado:\n>> Maria, você é uma boa mãe! Mantenha a sua força!',
-    );
-}
-if (numDeSim == 5) {
-    console.log(
-        'Resultado:\n>> Maria, você é a prova viva de que os milagres existem. Parabéns por ser uma vencedora!!!',
-    );
-}
+//RETORNA
