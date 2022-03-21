@@ -1,7 +1,7 @@
 A JORNADA DO HERÓI
 <br><br>
 Programa que faz 5 perguntas de 'Sim' ou 'Não' para o usuário, exibindo resultados diferentes no final.<br>
-O programa deve fazer uma contagem de quantas respostas foram 'Sim', e exibir o resultado de acordo com esse número:
+O programa deve fazer uma contagem de quantas respostas foram 'Sim', e exibir o resultado de acordo com o seguinte:
 <br><br>
 0 respostas 'Sim'.<br>
 1 ou 2 respostas 'Sim'.<br>
