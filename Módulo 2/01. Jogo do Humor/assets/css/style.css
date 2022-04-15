@@ -1,0 +1,17 @@
+header {
+    background-color: #0000ff; color: white; 
+    padding: 10px;
+    border: #0000ff;
+    margin:0px;
+}
+
+.texto {
+    color: #2e2d2d;
+}
+
+section {
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid 1px color blue; 
+    margin: 25px;
+}
