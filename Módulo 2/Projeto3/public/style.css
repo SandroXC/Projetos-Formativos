@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  scroll-behavior: smooth;
+}
+
+nav {
+  padding: 1rem;
+  background-color: tomato;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 0.6rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+header {
+  padding: 1rem;
+  background-color: tomato;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+}
+
+body {
+  background-color: #ffeed9;
+}
+
+main {
+  margin: 0 10rem 0 10rem;
+}
+
+section#cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #ffeed9;
+}
+
+section#cards div.card {
+  width: 20rem;
+  box-shadow: 5px 5px 5px 5px #00000015;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+section#cards h2 {
+  width: 100%;
+  text-align: center;
+}
+
+section#cards div.card img {
+  width: 100%;
+}
+
+section#cards div.card h2 {
+  margin-bottom: 1rem;
+}
+
+section#cards div.card p.descricao {
+  margin-bottom: 1rem;
+}
+
+section#cards div.card a {
+  padding: 1rem;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1rem;
+  background-color: #ffeed9;
+  border: solid 0px red;
+  color: red;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+section#cadastro {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3rem;
+}
+
+section#cadastro h2 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+section#cadastro form {
+  width: 45%;
+}
+
+section#cadastro form input {
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1rem;
+  outline: none;
+  border: solid 2px rgb(197, 197, 197);
+  margin: 0 1rem 1rem 0rem;
+}
+
+section#cadastro form label {
+  margin-bottom: 0.5rem;
+  color: rgb(197, 197, 197);
+}
+
+section#cadastro form button {
+  padding: 1rem;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1rem;
+  background-color: #fff;
+  border: solid 1px red;
+  color: red;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+section#cadastro form button:hover {
+  background-color: red;
+  color: #fff;
+}
+
+footer {
+  background-color: rgb(197, 197, 197);
+  margin: 1rem 0 0 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
