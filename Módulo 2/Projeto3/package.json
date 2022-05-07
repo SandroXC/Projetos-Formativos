@@ -1,0 +1,19 @@
+{
+  "name": "projeto3",
+  "version": "1.0.0",
+  "description": "Projeto Catálogo de Filmes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev":  "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/SandroXC/Projetos-Formativos/tree/main/M%C3%B3dulo%202/Projeto3)"
+  },
+  "author": "Sandro Coelho",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
