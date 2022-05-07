@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Filmes</title>
+  </head>
+
+  <body>
+
+      <nav>
+          <ul>
+              <li><a href="#cadastro">Cadastro</a></li>
+              <li><a href="#cards">Filmes</a></li>
+          </ul>
+      </nav>
+
+    <header>
+      <h1>Lista Cult</h1>
+    </header>
+
+    <main>
+
+      <section id="cadastro">
+
+        <% if (project == undefined)  { %>
+        <h2>Cadastre um Filme!</h2>
+        
+        <form action="/create" method="POST">
+          
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" />
+
+          <label for="descricao">Descrição:</label>
+          <input type="text" id="descricao" name="descricao" />
+
+          <label for="altura">Altura:</label>
+          <input type="text" id="altura" name="altura" />
+
+          <label for="peso">Peso:</label>
+          <input type="text" id="peso" name="peso" />
+
+          <label for="categoria">Categoria:</label>
+          <input type="text" id="categoria" name="categoria" />
+
+          <label for="habilidade">Habilidade:</label>
+          <input type="text" id="habilidade" name="habilidade" />
+
+          <label for="direcao">Direção:</label>
+          <input type="text" id="direcao" name="direcao" />
+
+          <label for="imagem">Link da Imagem:</label>
+          <input type="text" id="imagem" name="imagem" />
+
+          <button id="btnCadastrar" type="submit">Cadastrar</button>
+        
+        </form>
+
+        <% }  else { %>
+
+          <h2>Atualização do Pokemon</h2>
+
+        <form action="/update/<%= project.id %>" method="POST">
+          
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" value="<%= project.nome %>" />
+
+          <label for="descricao">Descrição:</label>
+          <input type="text" id="descricao" name="descricao" value="<%= project.descricao %>" />
+
+          <label for="altura">Altura:</label>
+          <input type="text" id="altura" name="altura" value="<%= project.altura %>" />
+
+          <label for="peso">Peso:</label>
+          <input type="text" id="peso" name="peso" value="<%= project.peso %>" />
+
+          <label for="categoria">Categoria:</label>
+          <input type="text" id="categoria" name="categoria" value="<%= project.categoria %>" />
+
+          <label for="habilidade">Habilidade:</label>
+          <input type="text" id="habilidade" name="habilidade" value="<%= project.habilidade %>" />
+
+          <label for="direcao">Direcao:</label>
+          <input type="text" id="direcao" name="direcao" value="<%= project.direcao %>" />
+
+          <label for="imagem">Link da Imagem:</label>
+          <input type="text" id="imagem" name="imagem" value="<%= project.imagem %>" />
+
+          <button id="btnAtualizar" type="submit">Atualizar</button>
+        
+        </form>
+       <% } %> 
+      </section>
+
+      <section id="cards">
+
+        <h2>Lista de Filmes</h2>
+
+        <% filmes.forEach((project) => { %>
+
+          <div class="card">
+          <img src="<%=  project.imagem %>" alt="" />
+
+          <h2><%= project.nome %></h2>
+
+          <p class="altura"><%= project.altura %></p></br>
+
+          <p class="peso"><%= project.peso %></p></br>
+
+          <p class="categoria"><%= project.categoria %></p></br>
+
+          <p class="habilidade"><%= project.habilidade %></p></br>
+
+          <p class="descricao"><%= project.descricao %></p>
+
+          <p><%= project.direcao %></p></br>
+
+          <a href="/detalhes/<%= project.id %>">Editar</a>
+          <a href="/delete/<%= project.id %>">Apagar</a>
+
+        </div>
+        <% }) %>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Todos os direitos reservados para SandroXC &copy;</p>
+    </footer>
+
+  </body>
+
+  </html>
