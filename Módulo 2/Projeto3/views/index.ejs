@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Pokedex</title>
+    <title>Filmes</title>
   </head>
 
   <body>
@@ -14,20 +14,20 @@
       <nav>
           <ul>
               <li><a href="#cadastro">Cadastro</a></li>
-              <li><a href="#cards">Pokemons</a></li>
+              <li><a href="#cards">Filmes</a></li>
           </ul>
       </nav>
 
     <header>
-      <h1>Pokedex</h1>
+      <h1>Lista Cult</h1>
     </header>
 
     <main>
 
       <section id="cadastro">
 
-        <% if (pokemon == undefined)  { %>
-        <h2>Cadastre um novo Pokemon!</h2>
+        <% if (project == undefined)  { %>
+        <h2>Cadastre um Filme!</h2>
         
         <form action="/create" method="POST">
           
@@ -49,8 +49,8 @@
           <label for="habilidade">Habilidade:</label>
           <input type="text" id="habilidade" name="habilidade" />
 
-          <label for="tipo">Tipo:</label>
-          <input type="text" id="tipo" name="tipo" />
+          <label for="direcao">Direção:</label>
+          <input type="text" id="direcao" name="direcao" />
 
           <label for="imagem">Link da Imagem:</label>
           <input type="text" id="imagem" name="imagem" />
@@ -63,31 +63,31 @@
 
           <h2>Atualização do Pokemon</h2>
 
-        <form action="/update/<%= pokemon.id %>" method="POST">
+        <form action="/update/<%= project.id %>" method="POST">
           
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" value="<%= pokemon.nome %>" />
+          <input type="text" id="nome" name="nome" value="<%= project.nome %>" />
 
           <label for="descricao">Descrição:</label>
-          <input type="text" id="descricao" name="descricao" value="<%= pokemon.descricao %>" />
+          <input type="text" id="descricao" name="descricao" value="<%= project.descricao %>" />
 
           <label for="altura">Altura:</label>
-          <input type="text" id="altura" name="altura" value="<%= pokemon.altura %>" />
+          <input type="text" id="altura" name="altura" value="<%= project.altura %>" />
 
           <label for="peso">Peso:</label>
-          <input type="text" id="peso" name="peso" value="<%= pokemon.peso %>" />
+          <input type="text" id="peso" name="peso" value="<%= project.peso %>" />
 
           <label for="categoria">Categoria:</label>
-          <input type="text" id="categoria" name="categoria" value="<%= pokemon.categoria %>" />
+          <input type="text" id="categoria" name="categoria" value="<%= project.categoria %>" />
 
           <label for="habilidade">Habilidade:</label>
-          <input type="text" id="habilidade" name="habilidade" value="<%= pokemon.habilidade %>" />
+          <input type="text" id="habilidade" name="habilidade" value="<%= project.habilidade %>" />
 
-          <label for="tipo">Tipo:</label>
-          <input type="text" id="tipo" name="tipo" value="<%= pokemon.tipo %>" />
+          <label for="direcao">Direcao:</label>
+          <input type="text" id="direcao" name="direcao" value="<%= project.direcao %>" />
 
           <label for="imagem">Link da Imagem:</label>
-          <input type="text" id="imagem" name="imagem" value="<%= pokemon.imagem %>" />
+          <input type="text" id="imagem" name="imagem" value="<%= project.imagem %>" />
 
           <button id="btnAtualizar" type="submit">Atualizar</button>
         
@@ -97,29 +97,29 @@
 
       <section id="cards">
 
-        <h2>Lista de Pokemons</h2>
+        <h2>Lista de Filmes</h2>
 
-        <% pokedex.forEach((pokemon) => { %>
+        <% filmes.forEach((project) => { %>
 
           <div class="card">
-          <img src="<%=  pokemon.imagem %>" alt="" />
+          <img src="<%=  project.imagem %>" alt="" />
 
-          <h2><%= pokemon.nome %></h2>
+          <h2><%= project.nome %></h2>
 
-          <p class="altura"><%= pokemon.altura %></p></br>
+          <p class="altura"><%= project.altura %></p></br>
 
-          <p class="peso"><%= pokemon.peso %></p></br>
+          <p class="peso"><%= project.peso %></p></br>
 
-          <p class="categoria"><%= pokemon.categoria %></p></br>
+          <p class="categoria"><%= project.categoria %></p></br>
 
-          <p class="habilidade"><%= pokemon.habilidade %></p></br>
+          <p class="habilidade"><%= project.habilidade %></p></br>
 
-          <p class="descricao"><%= pokemon.descricao %></p>
+          <p class="descricao"><%= project.descricao %></p>
 
-          <p><%= pokemon.tipo %></p></br>
+          <p><%= project.direcao %></p></br>
 
-          <a href="/detalhes/<%= pokemon.id %>">Editar</a>
-          <a href="/delete/<%= pokemon.id %>">Apagar</a>
+          <a href="/detalhes/<%= project.id %>">Editar</a>
+          <a href="/delete/<%= project.id %>">Apagar</a>
 
         </div>
         <% }) %>
