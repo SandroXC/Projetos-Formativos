@@ -20,8 +20,8 @@ export const filmes = connection.define('filmes', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    duracao: {
-        type: Sequelize.INTEGER,
+    descricao: {
+        type: Sequelize.STRING,
         allowNull: false
     },
     ano: {
