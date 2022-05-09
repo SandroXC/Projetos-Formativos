@@ -18,7 +18,7 @@ body {
   height: 100vh;
   width: 100vw;
   max-width: 100%;
-  background-color: #c69f9f;
+  background-color: #c5b0b0;
   color: #272727;
   font-family: "Digital", "Times New Roman", Times, serif;
 }
@@ -76,8 +76,12 @@ main div#sub__header {
 }
 
 footer {
-  height: 10%;
   background-color: #272727;
+  margin: 1rem 0 0 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 section#card__container {
@@ -103,14 +107,14 @@ section#details_container {
 section article.cards {
   height: 400px;
   width: 350px;
-  border: 0px solid red;
+  border: 0px solid #ff0000;
 }
 
 article.cards div.card_img {
   display: flex;
   justify-content: center;
   height: 90%;
-  border-bottom: 0px solid red;
+  border-bottom: 0px solid #ff0000;
 }
 
 article.cards div.card_img img {
@@ -130,11 +134,11 @@ table {
 }
 
 table tr:nth-child(odd) {
-  background-color: #930013;
+  background-color: #da6506;
 }
 
 table th {
-  background-color: #da062e;
+  background-color: #da6506;
 }
 
 div.btn__container {
@@ -162,7 +166,7 @@ form fieldset {
 }
 
 fieldset legend {
-  background-color: #930013;
+  background-color: #;
 }
 
 fieldset.fieldset__data {
@@ -175,7 +179,7 @@ form div#btn__container {
 }
 
 form button#btn__submit {
-  background-color: #da062e;
+  background-color: #da6506;
   color: #fff;
   height: 40px;
   width: 60px;
