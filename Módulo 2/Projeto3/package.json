@@ -1,24 +1,25 @@
 {
-  "name": "projeto3",
+  "name": "project3",
   "version": "1.0.0",
-  "description": "Projeto Catálogo de Filmes",
+  "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js,html,ejs,css",
+    "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "(https://github.com/SandroXC/Projetos-Formativos/tree/main/M%C3%B3dulo%202/Projeto3)"
-  },
-  "author": "Sandro Coelho",
+  "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.7",
     "express": "^4.18.1",
-    "nodemon": "^2.0.16",
     "pg": "^8.7.3",
-    "pg-hstore": "^2.3.4",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.19.0",
+    "sweetalert2": "^11.4.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }

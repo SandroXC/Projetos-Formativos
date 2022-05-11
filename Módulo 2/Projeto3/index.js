@@ -1,16 +1,22 @@
-//require("dotenv").config();
-const express = require("express");
-const path = require("path");
+import express from "express";
+import { routers } from "./src/routers/routers.js";
+import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const app = express();
-const routes = require("./src/routes/routes");
+const port = 3009 || process.env.PORT;
+let __dirname = path.resolve(path.dirname(""));
 
+console.log(__dirname);
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.set("view engine", "ejs");
+app.use(routers);
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded());
-app.use(routes);
 
-const port = process.env.PORT || 3000;
-
-app.listen(port, () =>
-  console.log("Servidor rodando em http://localhost:$(port)")
-);
+app.listen(port, () => {
+  console.log(`Estou rodando na porta ${port}`);
+});

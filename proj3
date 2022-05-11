@@ -1,7 +1,0 @@
-INSERT INTO project (nome, descricao, direcao, imagem)
-values (
-	'Her',
-	'O solitário escritor Theodore desenvolve uma relação de amor especial com o novo sistema operacional do seu computador. Surpreendentemente, ele acaba se apaixonando pela voz deste programa, uma entidade intuitiva e sensível chamada Samantha.',
-	'Spike Jonze',
-	'http://env-3045569.users.scale.virtualcloud.com.br/ROOT-579/her.jpg'
-)
