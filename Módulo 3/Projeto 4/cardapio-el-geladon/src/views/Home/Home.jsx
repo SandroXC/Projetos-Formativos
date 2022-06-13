@@ -19,9 +19,9 @@ function Home() {
   const [modoAtual, setModoAtual] = useState(ActionMode.NORMAL);
 
   const handleActions = (action) => {
-  const novaAcao = modoAtual === action ? ActionMode.NORMAL : action;
+    const novaAcao = modoAtual === action ? ActionMode.NORMAL : action;
     setModoAtual(novaAcao);
-  }
+  };
 
   const [paletaParaEditar, setPaletaParaEditar] = useState();
   const [paletaParaDeletar, setPaletaParaDeletar] = useState();
@@ -37,12 +37,12 @@ function Home() {
 
   const abrirSacola = async () => {
     const lista = JSON.parse(localStorage.getItem("sacola"));
-    const sacola = lista.filter(i => i.quantidade > 0);
+    const sacola = lista.filter((i) => i.quantidade > 0);
 
-    await SacolaService.create(sacola)
+    await SacolaService.create(sacola);
 
-    setCanOpenBag(true)
-  }
+    setCanOpenBag(true);
+  };
 
   const handleCloseModal = () => {
     setCanShowAdicionaPaletaModal(false);
@@ -50,7 +50,7 @@ function Home() {
     setPaletaParaDeletar();
     setPaletaParaEditar();
     setModoAtual(ActionMode.NORMAL);
-  }
+  };
 
   return (
     <div className="Home">
@@ -71,7 +71,7 @@ function Home() {
           updatePaleta={handleUpdatePaleta}
           paletaRemovida={paletaRemovida}
         />
-        {canShowAdicionaPaletaModal && 
+        {canShowAdicionaPaletaModal && (
           <AdicionaEditaPaletaModal
             mode={modoAtual}
             paletaToUpdate={paletaParaEditar}
@@ -79,7 +79,7 @@ function Home() {
             closeModal={handleCloseModal}
             onCreatePaleta={(paleta) => setPaletaParaAdicionar(paleta)}
           />
-        }
+        )}
         {paletaParaDeletar && (
           <DeletaPaletaModal
             paletaParaDeletar={paletaParaDeletar}
