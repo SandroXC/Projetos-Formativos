@@ -5,13 +5,13 @@ export class CreateUserDto {
   @IsNotEmpty()
   @IsString()
   @ApiProperty({
-    example: 'Ivan',
+    example: 'Sandro',
   })
   name: string;
 
   @IsEmail()
   @ApiProperty({
-    example: 'ivan@blue.com',
+    example: 'sandro@blue.com',
   })
   email: string;
 }
