@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 function connectToDatabase() {
     mongoose
-      .connect('mongodb://localhost:27017/paletas-db', {
+      .connect('mongodb+srv://admin:admin@cluster0.tu6masp.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
