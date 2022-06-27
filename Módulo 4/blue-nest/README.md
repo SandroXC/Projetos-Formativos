@@ -5,7 +5,7 @@ API desenvolvida utilizando Nest.js.
 ## Como fazer o clone
 
 ```bash
-git clone git@github.com:IvanBorba/blue-hambluergueria-nest.git
+git clone git@github.com:SandroXC/blue-nest.git
 ```
 
 ## Como instalar as dependências
