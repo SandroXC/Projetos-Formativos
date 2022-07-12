@@ -29,11 +29,7 @@
 ## Installation
 
 ```bash
-<<<<<<< HEAD
 $ npm install
-=======
-git clone git@github.com:SandroXC/Projetos-Formativos/Módulo 4/blue-nest.git
->>>>>>> a79773b39ef0d21462c462ee1f9e0929335f2f9f
 ```
 
 ## Running the app
